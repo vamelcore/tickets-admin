@@ -1,4 +1,4 @@
-# admin_v3_cli
+# SandBOX Admin
 
 ## Project setup
 ```

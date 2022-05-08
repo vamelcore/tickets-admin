@@ -1,0 +1,36 @@
+{
+  "auth": {
+    "login": {
+      "title": "Authorization",
+      "inputLabelEmail": "Your Email",
+      "inputLabelPassword": "Password",
+      "buttonEnter": "Enter",
+      "forgotPassword": "Forgot your password?",
+      "createAccount": "Don't have an account?",
+      "buttonRegistration": "Registration"
+    },
+    "register": {
+      "title": "Registration",
+      "inputLabelName": "Your Name",
+      "inputLabelEmail": "Your Email",
+      "inputLabelPassword": "Password",
+      "inputLabelPasswordConfirmation": "Repeat your password",
+      "checkboxLabelTerms": "I agree all statements in Terms of service",
+      "buttonRegister": "Register",
+      "buttonAuthorization": "Authorization"
+    },
+    "restore": {
+      "title": "Restore access",
+      "forRestoreEnterEmail": "To reset your password, enter your E-mail",
+      "inputLabelEmail": "Your Email",
+      "successMessage": "Email with your new password sent successfully. Please, check your mail.",
+      "buttonRestore": "Submit",
+      "buttonAuthorization": "Authorization"
+    }
+  },
+  "user": {
+    "settings": {
+      "title": "User settings"
+    }
+  }
+}
