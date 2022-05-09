@@ -1,0 +1,33 @@
+@mixin addFont($weight: 400, $style: normal, $fonts: '@/fonts', $name: 'Open Sans') {
+  $filename: 'opensans';
+  $weights: (
+          300: light,
+          400: regular,
+          600: semibold,
+          700: bold,
+          800: extrabold
+  );
+  $weightName: regular;
+  $url: '#{$fonts}';
+  @if map-has-key($weights, $weight) {
+      $weightName: map-get($weights, $weight);
+      $filename: '#{$filename}_#{$weight}-#{$weightName}';
+
+      @if $style == italic or $style == i {
+          $filename: '#{$filename}-italic';
+          $style: italic;
+      } @else {
+          $style: normal;
+      }
+
+      @font-face {
+          font-family: $name;
+          src: url('#{$url}/#{$filename}.woff2') format('woff2'),
+          url('#{$url}/#{$filename}.woff') format('woff');
+          font-weight: $weight;
+          font-style: $style;
+      }
+  } @else {
+      @warn 'Not found #{$filename}_#{$weight}';
+  }
+}
