@@ -1,9 +1,16 @@
 import { createStore } from 'vuex'
+import SecureLS from 'secure-ls'
 import VuexPersistence from 'vuex-persist'
 import auth from './modules/auth'
 
+const ls = new SecureLS({ 
+  isCompression: false 
+})
+
 const vuexLocal = new VuexPersistence({
-  storage: window.localStorage
+  storage: window.localStorage,
+  saveState: (key, state) => ls.set(key, state),
+  restoreState: (key) => ls.get(key)
 })
 
 const store = createStore({
@@ -27,7 +34,9 @@ const store = createStore({
   modules: {
     auth
   },
-  plugins: [vuexLocal.plugin]
+  plugins: [
+    vuexLocal.plugin
+  ]
 })
 
 export default store
