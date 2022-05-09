@@ -13,7 +13,7 @@ const routes = [
     name: 'login',
     meta: {
       layout: 'start',
-      noAuth: true,
+      guest: true,
       title: i18n.global.t('auth.login.title'),
     },
     component: () => import('../views/LoginView.vue'),
@@ -23,7 +23,7 @@ const routes = [
     name: 'registration',
     meta: {
       layout: 'start',
-      noAuth: true,
+      guest: true,
       title: i18n.global.t('auth.register.title'),
     },
     component: () => import('../views/LoginView.vue'),
@@ -33,7 +33,7 @@ const routes = [
     name: 'restorePassword',
     meta: {
       layout: 'start',
-      noAuth: true,
+      guest: true,
       title: i18n.global.t('auth.restore.title'),
     },
     component: () => import('../views/LoginView.vue'),
@@ -46,8 +46,12 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (store.getters.isLoggedIn || to.matched.some(record => record.meta.noAuth)) {
-    next()
+  if (store.getters.isLoggedIn || to.matched.some(record => record.meta.guest)) {
+    if (to.matched.some(record => record.meta.guest)) {
+      next('/')
+    } else {
+      next()
+    }
   } else {
     next('/login')
   }
