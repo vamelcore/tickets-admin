@@ -67,10 +67,10 @@ export default {
       state.token = ''
     },
   },
-  state: {
+  state: () => ({
     token: '',
     user: {},
-  },
+  }),
   getters: {
     isLoggedIn: state => !!state.token,
     getToken: state => state.token,
