@@ -21,9 +21,9 @@
     </div>
     <p class="error" v-if="validations.message">{{validations.message}}</p>
     <button class="btn">{{ $t('auth.login.buttonEnter') }}</button>
-    <router-link class="form__link" :to="{name:'restorePassword'}">{{ $t('auth.login.forgotPassword') }}</router-link>
+    <router-link class="form__link" :to="{name:'restore'}">{{ $t('auth.login.forgotPassword') }}</router-link>
     <div class="start-page-form__bottom">{{ $t('auth.login.createAccount') }}
-      <router-link class="form__link" :to="{name:'registration'}">{{ $t('auth.login.buttonRegistration') }}</router-link>
+      <router-link class="form__link" :to="{name:'register'}">{{ $t('auth.login.buttonRegistration') }}</router-link>
     </div>
   </form>
 </template>

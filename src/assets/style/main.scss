@@ -1,9 +1,14 @@
+/* fonts */
 $fonts: './assets/fonts';
+@import '@/assets/fonts/fonts.scss';
 @include addFont(400, normal, $fonts, 'Open Sans');
 @include addFont(600, normal, $fonts, 'Open Sans');
 @include addFont(700, normal, $fonts, 'Open Sans');
 
-@import '@/assets/fonts/fonts.scss';
+@import '@/assets/style/normalize.scss';
+@include normalize();
+
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
 
 body{
   font-family: 'Open Sans', sans-serif;
@@ -834,7 +839,7 @@ input, textarea, button {
 .slide-fade-leave-active {
   transition: all .35s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-enter{
+.slide-fade-enter-from {
   transform: translateX(-100vw);
   opacity: 1;
 }
@@ -926,7 +931,7 @@ input, textarea, button {
   width: 385px;
   max-width: 100%;
   background: #fff;
-  margin: 10% auto 0;
+  margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
   &__title{

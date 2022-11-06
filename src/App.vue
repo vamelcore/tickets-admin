@@ -1,30 +1,58 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/login">Login</router-link>
-  </nav>
-  <router-view/>
+  <transition name="slide-fade" mode="out-in">
+    <template v-if="this.$route.meta.layout == 'start' || !isLoggedIn">
+      <StartLayout />
+    </template>
+    <template v-else>
+      <MainLayout />
+    </template>
+  </transition>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-nav {
-  padding: 30px;
+import StartLayout from '@/layouts/Start.vue'
+import MainLayout from '@/layouts/Main.vue'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  name: 'App',
+  components: {
+    MainLayout,
+    StartLayout
+  },
+  data: function() {
+    return {
+      isHidden: false,
+      intervalLoginChecker: null,
+      requisites: false,
     }
+  },
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters.isLoggedIn
+    },
+  },
+  methods: {
+  },
+  mounted: function () {
+  },
+  created: function () {
+    this.axios.defaults.headers.common['Authorization'] = this.$store.getters.getToken || ''
+    this.axios.interceptors.response.use(undefined, err => {
+      if (err.response) {
+        if (err.response.status === 401) {
+          this.$store.dispatch('logout')
+          .then(() => this.$router.push({name:'login'}))
+          return Promise.resolve({data:{success:false}})
+        }
+      }
+      return Promise.reject(err)
+    })
   }
 }
+
+</script>
+
+<style lang="scss">
+@import "@/assets/style/main.scss";
 </style>

@@ -16,27 +16,27 @@ const routes = [
       guest: true,
       title: i18n.global.t('auth.login.title'),
     },
-    component: () => import('../views/LoginView.vue'),
+    component: () => import('../views/auth/Login.vue'),
   },
   {
-    path: '/registration',
-    name: 'registration',
+    path: '/register',
+    name: 'register',
     meta: {
       layout: 'start',
       guest: true,
       title: i18n.global.t('auth.register.title'),
     },
-    component: () => import('../views/LoginView.vue'),
+    component: () => import('../views/auth/Register.vue'),
   },
   {
     path: '/restore',
-    name: 'restorePassword',
+    name: 'restore',
     meta: {
       layout: 'start',
       guest: true,
       title: i18n.global.t('auth.restore.title'),
     },
-    component: () => import('../views/LoginView.vue'),
+    component: () => import('../views/auth/Restore.vue'),
   },
 ]
 
