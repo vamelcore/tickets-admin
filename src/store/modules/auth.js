@@ -1,6 +1,7 @@
 import axios from '@/axios'
 
 export default {
+  namespaced: true,
   actions: {
     login({ commit }, credentials) {
       return new Promise((resolve, reject) => {
@@ -65,6 +66,7 @@ export default {
     },
     logout(state) {
       state.token = ''
+      state.user = {}
     },
   },
   state: () => ({

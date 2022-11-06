@@ -20,35 +20,11 @@ export default {
     MainLayout,
     StartLayout
   },
-  data: function() {
-    return {
-      isHidden: false,
-      intervalLoginChecker: null,
-      requisites: false,
-    }
-  },
   computed: {
     isLoggedIn() {
-      return this.$store.getters.isLoggedIn
+      return this.$store.getters['auth/isLoggedIn']
     },
   },
-  methods: {
-  },
-  mounted: function () {
-  },
-  created: function () {
-    this.axios.defaults.headers.common['Authorization'] = this.$store.getters.getToken || ''
-    this.axios.interceptors.response.use(undefined, err => {
-      if (err.response) {
-        if (err.response.status === 401) {
-          this.$store.dispatch('logout')
-          .then(() => this.$router.push({name:'login'}))
-          return Promise.resolve({data:{success:false}})
-        }
-      }
-      return Promise.reject(err)
-    })
-  }
 }
 
 </script>
