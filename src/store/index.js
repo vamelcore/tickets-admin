@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import SecureLS from 'secure-ls'
 import VuexPersistence from 'vuex-persist'
-import auth from './modules/auth'
+import AuthModule from './modules/auth'
 
 const ls = new SecureLS({ 
   isCompression: false 
@@ -32,7 +32,7 @@ const store = createStore({
   actions: {
   },
   modules: {
-    auth
+    auth: AuthModule
   },
   plugins: [
     vuexLocal.plugin

@@ -116,7 +116,7 @@ import localeFormatter from "@/helpers/localeFormatter"
         this.resize()
       });
 
-      this.userData = this.$store.getters.getUser
+      this.userData = this.$store.getters['auth/getUser']
     },
     computed: {
       userName: function() {
@@ -152,7 +152,7 @@ import localeFormatter from "@/helpers/localeFormatter"
         this.windowWidth = document.documentElement.clientWidth;
       },
       logoutButton() {
-        this.$store.dispatch('logout')
+        this.$store.dispatch('auth/logout')
         .then(() => this.$router.push({name:'login'}))
       },
     },

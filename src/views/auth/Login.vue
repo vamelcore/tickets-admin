@@ -48,7 +48,7 @@ export default {
   methods: {
     ...validationHelpers,
     login: function () {
-      this.$store.dispatch('login', this.credentials)
+      this.$store.dispatch('auth/login', this.credentials)
       .then(() => {
         this.$router.push({name:'home'})
       })

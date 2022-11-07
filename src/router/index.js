@@ -46,7 +46,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (store.getters.isLoggedIn) {
+  if (store.getters['auth/isLoggedIn']) {
     if (to.matched.some(record => record.meta.guest)) {
       next('/');
     } else {
