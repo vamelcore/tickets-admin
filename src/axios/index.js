@@ -13,11 +13,12 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   config => {
-    if (store.getters['auth/getToken']) {
+    if (store.getters['auth/isLoggedIn']) {
       config.headers.Authorization = 'Bearer ' + store.getters['auth/getToken'];
     } else {
       delete config.headers.Authorization;
     }
+
     return config
   }
 )
@@ -27,12 +28,11 @@ instance.interceptors.response.use(
     return response;
   },
   error => {
-    if (error.response.status === 401) {
-      if (store.getters['auth/isLoggedIn']) {
-        store.commit('auth/logout')
-        router.push({ name: 'login' })
-      }
+    if (error.response.status === 401 && store.getters['auth/isLoggedIn']) {
+      store.commit('auth/logout')
+      router.push({ name: 'login' })
     }
+
     return Promise.reject(error)
   }
 )

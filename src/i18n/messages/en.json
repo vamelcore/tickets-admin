@@ -7,7 +7,8 @@
       "buttonEnter": "Enter",
       "forgotPassword": "Forgot your password?",
       "createAccount": "Don't have an account?",
-      "buttonRegistration": "Registration"
+      "buttonRegistration": "Registration",
+      "rememberMe": "Remember Me"
     },
     "register": {
       "title": "Registration",
@@ -26,6 +27,12 @@
       "successMessage": "Email with your new password sent successfully. Please, check your mail.",
       "buttonRestore": "Submit",
       "buttonAuthorization": "Authorization"
+    },
+    "password": {
+      "title": "Change password",
+      "inputLabelPassword": "Password",
+      "inputLabelPasswordConfirmation": "Repeat your password",
+      "buttonUpdatePassword": "Update password"
     }
   },
   "user": {

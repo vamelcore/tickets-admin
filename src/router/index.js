@@ -38,6 +38,15 @@ const routes = [
     },
     component: () => import('../views/auth/Restore.vue'),
   },
+  {
+    path: '/password',
+    name: 'password',
+    meta: {
+      layout: 'start',
+      title: i18n.global.t('auth.password.title'),
+    },
+    component: () => import('../views/auth/Password.vue'),
+  },
 ]
 
 const router = createRouter({

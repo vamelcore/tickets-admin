@@ -19,6 +19,15 @@
         </span>
       </div>
     </div>
+    <div class="form__group">
+      <div class="input-round p-svg p-round p-pulse wrap-text pretty">
+        <input type="checkbox" v-model="credentials.remember" />
+        <div class="state p-primary">
+          <img src="@/assets/svg/check.svg" class="svg svg-icon svg-fill" />
+          <label>{{ $t('auth.login.rememberMe') }}</label>
+        </div>
+      </div>
+    </div>
     <p class="error" v-if="validations.message">{{validations.message}}</p>
     <button class="btn">{{ $t('auth.login.buttonEnter') }}</button>
     <router-link class="form__link" :to="{name:'restore'}">{{ $t('auth.login.forgotPassword') }}</router-link>
@@ -37,6 +46,7 @@ export default {
       credentials: {
         email: '',
         password: '',
+        remember: '',
       },
       validations: {
         message: '',
