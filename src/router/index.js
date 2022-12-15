@@ -50,7 +50,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes
 })
 
@@ -69,7 +69,7 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach((to) => {
-  document.title = to.meta.title || process.env.VUE_APP_TITLE
+  document.title = to.meta.title || import.meta.env.VITE_TITLE
 })
 
 export default router

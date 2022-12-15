@@ -15,9 +15,9 @@ const vuexLocal = new VuexPersistence({
 
 const store = createStore({
   state: () => ({
-    appUrl: process.env.VUE_APP_URL,
-    locale: process.env.VUE_APP_I18N_LOCALE || "en",
-    fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
+    appUrl: import.meta.env.VITE_URL,
+    locale: import.meta.env.VITE_I18N_LOCALE || "en",
+    fallbackLocale: import.meta.env.VITE_I18N_FALLBACK_LOCALE || "en",
   }),
   getters: {
     locale: state => {

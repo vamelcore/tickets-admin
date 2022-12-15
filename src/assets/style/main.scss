@@ -8,7 +8,7 @@ $fonts: './assets/fonts';
 @import '@/assets/style/normalize.scss';
 @include normalize();
 
-@import '~pretty-checkbox/src/pretty-checkbox.scss';
+@import 'pretty-checkbox/src/pretty-checkbox.scss';
 
 body{
   font-family: 'Open Sans', sans-serif;
