@@ -20,7 +20,7 @@
       "buttonRegister": "Register",
       "buttonAuthorization": "Authorization"
     },
-    "restore": {
+    "passwordRestore": {
       "title": "Restore access",
       "forRestoreEnterEmail": "To reset your password, enter your E-mail",
       "inputLabelEmail": "Your Email",
@@ -28,7 +28,7 @@
       "buttonRestore": "Submit",
       "buttonAuthorization": "Authorization"
     },
-    "password": {
+    "passwordUpdate": {
       "title": "Change password",
       "inputLabelPassword": "Password",
       "inputLabelPasswordConfirmation": "Repeat your password",

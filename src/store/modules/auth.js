@@ -27,9 +27,9 @@ export default {
           })
       })
     },
-    password(_, passwords) {
+    passwordUpdate(_, passwords) {
       return new Promise((resolve, reject) => {
-        axios.put('/password', passwords)
+        axios.put('/password-update', passwords)
           .then(responce => {
             resolve(responce.data)
           })
@@ -38,9 +38,9 @@ export default {
           })
       })
     },
-    restore(_, email) {
+    passwordRestore(_, email) {
       return new Promise((resolve, reject) => {
-        axios.post('/restore', email)
+        axios.post('/password-restore', email)
           .then(responce => {
             resolve(responce.data)
           })

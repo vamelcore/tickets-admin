@@ -23,7 +23,7 @@
           <li class="dropdown-menu__li"><a class="dropdown-menu__link" href="#">Профиль</a></li>
           <li class="dropdown-menu__li"><a class="dropdown-menu__link" href="#">Download Invoice</a></li>
           <li class="dropdown-menu__li">
-            <router-link class="dropdown-menu__link" :to="{name:'password'}">Изменить пароль</router-link>
+            <router-link class="dropdown-menu__link" :to="{name:'passwordUpdate'}">Изменить пароль</router-link>
           </li>
           <li class="dropdown-menu__li"><a class="dropdown-menu__link" href="#" @click.prevent="logoutButton">Выйти</a></li>
         </ul>
@@ -74,7 +74,7 @@
           <li class="mobile-menu-user__li"><a class="mobile-menu-user__link" href="#">Настройки</a></li>
           <li class="mobile-menu-user__li"><a class="mobile-menu-user__link" href="#">Профиль</a></li>
           <li class="nav-mobile__li">
-            <router-link class="mobile-menu-user__link" :to="{name:'password'}">Изменить пароль</router-link>
+            <router-link class="mobile-menu-user__link" :to="{name:'passwordUpdate'}">Изменить пароль</router-link>
           </li>
           <li class="mobile-menu-user__li"><a class="mobile-menu-user__link" href="#" @click.prevent="logoutButton">Выйти</a></li>
         </ul>

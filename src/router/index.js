@@ -29,23 +29,23 @@ const routes = [
     component: () => import('../views/auth/Register.vue'),
   },
   {
-    path: '/restore',
-    name: 'restore',
+    path: '/password-restore',
+    name: 'passwordRestore',
     meta: {
       layout: 'start',
       guest: true,
-      title: i18n.global.t('auth.restore.title'),
+      title: i18n.global.t('auth.passwordRestore.title'),
     },
-    component: () => import('../views/auth/Restore.vue'),
+    component: () => import('../views/auth/PasswordRestore.vue'),
   },
   {
-    path: '/password',
-    name: 'password',
+    path: '/password-update',
+    name: 'passwordUpdate',
     meta: {
       layout: 'start',
-      title: i18n.global.t('auth.password.title'),
+      title: i18n.global.t('auth.passwordUpdate.title'),
     },
-    component: () => import('../views/auth/Password.vue'),
+    component: () => import('../views/auth/PasswordUpdate.vue'),
   },
 ]
 
